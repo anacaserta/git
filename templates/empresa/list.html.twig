@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Empresa list{% endblock %}
+
+{% block body %}
+
+    <table class="table">
+
+        <tbody>
+        {% for empresa in empresas %}
+            <tr>
+                <td>{{ empresa.id }}</td>
+                <td>{{ empresa.titulo }}</td>
+                <td>
+                    <a href="{{ path('empresa_show', {'id': empresa.id}) }}">show</a>
+                    <a href="{{ path('empresa_edit', {'id': empresa.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="10">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

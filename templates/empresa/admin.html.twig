@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Adim Empresa{% endblock %}
+
+{% block body %}
+    <h2>Business Finder Admin</h2>
+    <br>
+    <h3>Business</h3>
+
+
+    <div class="col-xs-4 col-md-4" >
+        {{ include('empresa/list.html.twig') }}
+
+        <button type="button" class="btn-primary m-sm-3" onclick=location.href="{{ path('empresa_new') }}">Create new </button>
+
+
+    </div>
+
+{% endblock %}
