@@ -26,22 +26,19 @@ class EmpresaController extends AbstractController
     }
 
     /**
-     * @Route("/list", name="empresa_find", methods={"GET", "POST"})
+     * @Route("/", name="empresa_find", methods={"GET", "POST"})
      */
     public function search(Request $request, EmpresaRepository $empresaRepository): Response
-
     {
-        $form = $this->createFormBuilder();
-        $form = $request->request->all()->findByTitulo($form['form']['titulo']);
-        return $this->render('empresa/list.html.twig', [
-            'empresas' => $empresaRepository->findByTitulo($form),
+        dump($request->getContent());
+        return $this->render('empresa/results.html.twig', [
+            'empresas' => $empresaRepository->findByTitulo($request->request->get('search'))
 
         ]);
     }
 
-
     /**
-     * @Route("/admin", name="empresa_admin", methods={"GET","POST"})
+     * @Route("/admin", name="empresa_admin", methods={"GET"})
      */
     public function admin(EmpresaRepository $empresaRepository): Response
     {

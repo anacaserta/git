@@ -10,21 +10,24 @@
 
         <h1 class="h3 mb-3 font-weight-normal">Business Finder</h1>
         <br>
-            <div class="active-cyan mb-4 align-content-md-between" >
-            <input class="form-control" type="text" style="text-align: center" placeholder="What are you looking for?" aria-label="Search">
 
-        </div>
+        <form method="post" action="{{path('empresa_find' )}}">
+                <div class="active-cyan mb-4 align-content-md-between" >
+                <input required="true" class="form-control" type="text" name="search" style="text-align: center" placeholder="What are you looking for?" aria-label="Search">
 
-        <div class="text-center">
-            <button onclick=location.href="{{ path('empresa_find') }}" style="padding: 10px 30px;" type="submit" class="btn btn-primary btn-large">Search</button>
-        </div>
+            </div>
 
+            <div class="text-center">
+                <button type="submit"  style="padding: 10px 30px;" class="btn btn-primary btn-large">Search</button>
+            </div>
+        </form>
 
     </div>
 
-    <button onclick=location.href="{{ path('app_login') }}"  type="button" style="padding: 5px 5px" class="btn-primary pull-right m-sm-3" >
+    <button onclick=location.href="{{ path('app_login') }}"  type="button" style="padding: 5px 5px" class="btn btn-dark pull-right m-sm-3" >
         Admin
      <i class='fas fa-user'></i></button>
+
 
 
 

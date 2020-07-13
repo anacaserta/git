@@ -34,17 +34,6 @@ class EmpresaRepository extends ServiceEntityRepository
             ->getResult()
         ;
     }
+    
 
-
-    /*
-    public function findOneBySomeField($value): ?Empresa
-    {
-        return $this->createQueryBuilder('e')
-            ->andWhere('e.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
-    }
-    */
 }

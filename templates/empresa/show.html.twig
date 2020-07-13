@@ -3,7 +3,7 @@
 {% block title %}Empresa{% endblock %}
 
 {% block body %}
-    <h1>Empresa</h1>
+    <h2>Empresa</h2>
 
     <table class="table">
         <tbody>
@@ -43,9 +43,9 @@
         </tbody>
     </table>
 
-    <a href="{{ path('empresa_index') }}">back to list</a>
+    <button class="btn btn-primary m-1" onclick=location.href="{{ path('empresa_admin') }}">Back to list</button>
 
-    <a href="{{ path('empresa_edit', {'id': empresa.id}) }}">edit</a>
+    <button class="btn btn-primary m-1" onclick=location.href="{{ path('empresa_edit', {'id': empresa.id}) }}">Edit</button>
 
     {{ include('empresa/_delete_form.html.twig') }}
 {% endblock %}
