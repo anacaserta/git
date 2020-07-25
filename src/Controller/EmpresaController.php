@@ -32,7 +32,7 @@ class EmpresaController extends AbstractController
     {
         dump($request->getContent());
         return $this->render('empresa/results.html.twig', [
-            'empresas' => $empresaRepository->findByTitulo($request->request->get('search'))
+            'empresas' => $empresaRepository->search($request->request->get('search'))
 
         ]);
     }

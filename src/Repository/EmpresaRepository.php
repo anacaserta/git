@@ -24,16 +24,20 @@ class EmpresaRepository extends ServiceEntityRepository
     //  * @return Empresa[] Returns an array of Empresa objects
     //  */
 
-    public function findByTitulo($titulo)
+    public function search($term)
     {
-        return $this->createQueryBuilder('e')
-            ->andWhere('e.titulo LIKE :titulo')
-            ->setParameter('titulo',  '%'.$titulo.'%')
+        return $this->createQueryBuilder('emp')
+            ->andWhere(
+                'emp.titulo LIKE :searchTerm 
+                 OR emp.endereco LIKE :searchTerm
+                 OR emp.cep LIKE :searchTerm 
+                 OR emp.cidade LIKE :searchTerm
+                 OR emp.categoria LIKE :searchTerm')
+            ->setParameter('searchTerm', '%'.$term.'%')
             ->setMaxResults(10)
             ->getQuery()
             ->getResult()
         ;
     }
-    
 
 }
