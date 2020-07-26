@@ -4,7 +4,10 @@
 
 {% block body %}
 
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <button onclick=location.href="{{ path('app_login') }}"  type="button" style="padding: 5px 5px" class="btn btn-primary float-right m-sm-3" >
+        Admin
+        <i class='fas fa-user'></i>
+    </button>
 
     <div  class="text-center mt-5 col-md-6 offset-md-3">
 
@@ -24,9 +27,7 @@
 
     </div>
 
-    <button onclick=location.href="{{ path('app_login') }}"  type="button" style="padding: 5px 5px" class="btn btn-dark pull-right m-sm-3" >
-        Admin
-     <i class='fas fa-user'></i></button>
+
 
 
 

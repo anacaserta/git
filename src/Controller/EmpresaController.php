@@ -18,12 +18,11 @@ class EmpresaController extends AbstractController
     /**
      * @Route("/", name="empresa_index", methods={"GET"})
      */
-    public function index(EmpresaRepository $empresaRepository): Response
+    public function index(): Response
     {
-        return $this->render('empresa/index.html.twig', [
-            'empresas' => $empresaRepository->findAll(),
-        ]);
+        return $this->render('empresa/index.html.twig');
     }
+
 
     /**
      * @Route("/", name="empresa_find", methods={"GET", "POST"})
@@ -79,6 +78,16 @@ class EmpresaController extends AbstractController
             'empresa' => $empresa,
         ]);
     }
+    /**
+     * @Route("/detail/{id}", name="empresa_detail", methods={"GET"})
+     */
+    public function detail(Empresa $empresa): Response
+    {
+        return $this->render('empresa/detail.html.twig', [
+            'empresa' => $empresa,
+        ]);
+    }
+
 
     /**
      * @Route("/admin/{id}/edit", name="empresa_edit", methods={"GET","POST"})

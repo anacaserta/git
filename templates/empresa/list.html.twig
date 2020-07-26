@@ -2,31 +2,41 @@
 
 {% block title %}Empresa list{% endblock %}
 
+
+
+
 {% block body %}
 
-    <table class="table">
-        <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 
-        <tbody>
-        {% for empresa in empresas %}
-            <tr>
+    <div class="container">
+        <table id="mytable" class="table">
+            <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 
-                <td>{{ empresa.titulo }}</td>
-                <td>
+            <tbody>
 
-                    <a href="{{ path('empresa_show', {'id': empresa.id}) }}">
-                        <i style='font-size:24px' class='fas'>&#xf5a0;</i>
-                    </a>
+                {% for empresa in empresas %}
+                    <tr>
+
+                        <td>{{ empresa.titulo }}</td>
+                        <td>
+
+                            <a href="{{ path('empresa_detail', {'id': empresa.id}) }}">
+                                <i style='font-size:24px' class='fas'>&#xf101;</i>
+                            </a>
+
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="10">No records found</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
 
 
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="10">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+    </div>
+
+
 
 {% endblock %}

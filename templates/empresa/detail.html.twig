@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Empresa{% endblock %}
+
+{% block body %}
+<h2>Empresa</h2>
+
+<div class="col-xs-6 col-md-4" >
+    <table class="table">
+        <tbody>
+
+        <tr>
+            <th>Título</th>
+            <td>{{ empresa.titulo }}</td>
+        </tr>
+        <tr>
+            <th>Telefone</th>
+            <td>{{ empresa.telefone }}</td>
+        </tr>
+        <tr>
+            <th>Endereço</th>
+            <td>{{ empresa.endereco }}</td>
+        </tr>
+        <tr>
+            <th>Cidade</th>
+            <td>{{ empresa.cidade }}</td>
+        </tr>
+        <tr>
+            <th>Estado</th>
+            <td>{{ empresa.estado }}</td>
+        </tr>
+        <tr>
+            <th>Descrição</th>
+            <td>{{ empresa.descricao }}</td>
+        </tr>
+        <tr>
+            <th>Categoria</th>
+            <td>{{ empresa.categoria ? empresa.categoria|join(', ') : '' }}</td>
+        </tr>
+        <tr>
+            <th>Cep</th>
+            <td>{{ empresa.cep }}</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <button class="btn btn-primary m-1" onclick=location.href="{{ path('empresa_find') }}">
+
+        <i style='font-size:16px' class='fas'>&#xf060;</i>
+
+    </button>
+
+{% endblock %}

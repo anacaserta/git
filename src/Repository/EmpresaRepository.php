@@ -19,11 +19,7 @@ class EmpresaRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Empresa::class);
     }
-
-    // /**
-    //  * @return Empresa[] Returns an array of Empresa objects
-    //  */
-
+    
     public function search($term)
     {
         return $this->createQueryBuilder('emp')
@@ -34,10 +30,10 @@ class EmpresaRepository extends ServiceEntityRepository
                  OR emp.cidade LIKE :searchTerm
                  OR emp.categoria LIKE :searchTerm')
             ->setParameter('searchTerm', '%'.$term.'%')
-            ->setMaxResults(10)
+            ->setMaxResults(100)
             ->getQuery()
             ->getResult()
         ;
     }
 
-}
+    }

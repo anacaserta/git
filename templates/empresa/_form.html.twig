@@ -1,4 +1,11 @@
 {{ form_start(form) }}
     {{ form_widget(form) }}
+
+    <button style='font-size:16px' class="btn btn-primary m-1" onclick=location.href="{{ path('empresa_admin') }}">
+        <i class='fas fa-arrow-left'></i>
+    </button>
+
     <button class="btn btn-success m-1">{{ button_label|default('Save') }}</button>
+
+
 {{ form_end(form) }}
